@@ -4,9 +4,19 @@
  box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'NicoMoji';
+    src: url('path-to-your-font/nicomoji.woff2') format('woff2'),/*You can download the font and add path here*/
+         url('path-to-your-font/nicomoji.woff') format('woff');
+    /* Add more formats if necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
- font-family: 'Poppins', sans-serif;
+
  overflow: hidden;
+ font-family: 'NicoMoji', sans-serif;
 }
 
 .wave {
@@ -160,7 +170,6 @@ form {
  height: 50px;
  border-radius: 25px;
  outline: none;
- border:2px, black;
  background:#ad9eff;
  background-size: 200%;
  font-size: 1.2rem;
@@ -170,6 +179,7 @@ form {
  cursor: pointer;
  transition: .5s;
  color: #fff;
+    border: 1px solid #ad9eff;
 }
 
 

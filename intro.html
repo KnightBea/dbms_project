@@ -21,11 +21,15 @@
       <div class="login-content">
         <form>
           <h2 class="title">HYPER-X</h2>
-										<a href="login.html" class="btn">JOIN</a>
+          <input type="button" class="btn" value="JOIN"  onclick="login()"></input>
         </form>
 
       </div>
     </div>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      function login(){
+        window.location.href = "login.html";
+      }
+    </script>
   </body>
 </html>
