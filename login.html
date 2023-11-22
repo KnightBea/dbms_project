@@ -4,7 +4,7 @@
   <title>Registration Page</title>
   <!--<link rel="stylesheet" type="text/css" href="css/reg.css">-->
   <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>
  <style>
@@ -283,118 +283,6 @@
 		input.addEventListener("focus", addcl);
 		input.addEventListener("blur", remcl);
 	});
-
-
-	// Password conditions
-	var myInput = document.getElementById("psw");
-	var confirmPsw = document.getElementById("confirmPsw");
-	var letter = document.getElementById("letter");
-	var capital = document.getElementById("capital");
-	var number = document.getElementById("number");
-	var length = document.getElementById("length");
-	var match = document.getElementById("match");
-	// Get the Confirm Password input element
-var confirmPswInput = document.getElementById("confirmPsw");
-
-// Disable paste functionality for the Confirm Password field
-confirmPswInput.addEventListener("paste", function (e) {
-    e.preventDefault();
-    alert("Pasting is not allowed in the Confirm Password field");
-});
-
-
-	// When the user clicks on the password field, show the message box
-	myInput.addEventListener("focus", function() {
-		document.getElementById("password-test").style.display = "block";
-	});
-
-	// When the user clicks outside of the password field, hide the message box
-	myInput.addEventListener("blur", function() {
-		document.getElementById("password-test").style.display = "none";
-	});
-
-				// When the "Confirm Password" field gains focus, show the password validation messages
-confirmPsw.addEventListener("focus", function() {
-    document.getElementById("password-test").style.display = "block";
-});
-
-// When the "Confirm Password" field loses focus, hide the password validation messages
-confirmPsw.addEventListener("blur", function() {
-    document.getElementById("password-test").style.display = "none";
-});
-
-
-	// When the user starts to type something inside the password field
-	myInput.addEventListener("input" , function() {
-		// Validate lowercase letters
-		var lowerCaseLetters = /[a-z]/g;
-		if(myInput.value.match(lowerCaseLetters)) {  
-			letter.classList.remove("invalid");
-			letter.classList.add("valid");
-		} else {
-			letter.classList.remove("valid");
-			letter.classList.add("invalid");
-		}
-
-		// Validate capital letters
-		var upperCaseLetters = /[A-Z]/g;
-		if(myInput.value.match(upperCaseLetters)) {  
-			capital.classList.remove("invalid");
-			capital.classList.add("valid");
-		} else {
-			capital.classList.remove("valid");
-			capital.classList.add("invalid");
-		}
-
-		// Validate numbers
-		var numbers = /[0-9]/g;
-		if(myInput.value.match(numbers)) {  
-			number.classList.remove("invalid");
-			number.classList.add("valid");
-		} else {
-			number.classList.remove("valid");
-			number.classList.add("invalid");
-		}
-
-		// Validate length
-		if(myInput.value.length >= 8) {
-			length.classList.remove("invalid");
-			length.classList.add("valid");
-		} else {
-			length.classList.remove("valid");
-			length.classList.add("invalid");
-		}
-
-		// Enable submit button if all conditions are met
-		var submit = document.querySelector(".btn");
-		if(letter.classList.contains("valid") && capital.classList.contains("valid") && number.classList.contains("valid") && length.classList.contains("valid") && match.classList.contains("valid")) {
-			submit.disabled = false;
-		} else {
-			submit.disabled = true;
-		}
-	});
-
-	// When the user starts to type something inside the "Confirm Password" field
-	confirmPsw.addEventListener("input", function() {
-		// Validate password match
-		var confirmPswInput = document.getElementById("confirmPsw");
-		if (myInput.value === confirmPswInput.value && confirmPswInput.value !== "") {
-			match.classList.remove("invalid");
-			match.classList.add("valid");
-		} else {
-			match.classList.remove("valid");
-			match.classList.add("invalid");
-		}
-
-		// Enable submit button if all conditions are met
-		var submit = document.querySelector(".btn");
-		if(letter.classList.contains("valid") && capital.classList.contains("valid") && number.classList.contains("valid") && length.classList.contains("valid") && match.classList.contains("valid")) {
-			submit.disabled = false;
-		} else {
-			submit.disabled = true;
-		}
-	});
-
 	</script>
  </body>
 
